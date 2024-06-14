@@ -1,0 +1,19 @@
+.chartTitle {
+  font-family: Roboto, sans-serif;
+}
+
+.yAxisLabel {
+  font-family: Roboto, sans-serif;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  margin: -10;
+}
+
+.barChart {
+  display: flex;
+  flex-direction: column;
+}
+
+.barChart > span {
+  display: flex;
+}

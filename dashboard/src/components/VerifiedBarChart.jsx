@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import Airtable from "airtable";
-import "./css/SubmittedBarChart.css";
+import "./css/VerifiedBarChart.css";
 
-function SubmittedBarChart() {
+function VerifiedBarChart() {
   const [counts, setCounts] = useState([]);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function SubmittedBarChart() {
     <>
       <div className="barChart">
         <div className="chartTitle">
-          <b>Submitted Applications by Type</b>
+          <b>Verified Applications by Type</b>
         </div>
 
         <span>
@@ -75,4 +75,4 @@ function SubmittedBarChart() {
   );
 }
 
-export default SubmittedBarChart;
+export default VerifiedBarChart;
