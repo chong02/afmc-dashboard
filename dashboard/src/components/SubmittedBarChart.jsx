@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import Airtable from "airtable";
+import "./css/SubmittedBarChart.css";
 
 function SubmittedBarChart() {
   const [counts, setCounts] = useState([]);
@@ -43,17 +44,33 @@ function SubmittedBarChart() {
 
   return (
     <>
-      <BarChart
-        xAxis={[
-          {
-            scaleType: "band",
-            data: ["Medi-Cal", "Covered California Plans", "HealthPAC", "Other"]
-          }
-        ]}
-        series={[{ data: counts }]}
-        width={800}
-        height={300}
-      />
+      <div className="barChart">
+        <div className="chartTitle">
+          <b>Submitted Applications by Type</b>
+        </div>
+
+        <span>
+          <div className="yAxisLabel">Applications</div>
+          <div className="chart">
+            <BarChart
+              xAxis={[
+                {
+                  scaleType: "band",
+                  data: [
+                    "Medi-Cal",
+                    "Covered California Plans",
+                    "HealthPAC",
+                    "Other"
+                  ]
+                }
+              ]}
+              series={[{ data: counts }]}
+              width={800}
+              height={300}
+            />
+          </div>
+        </span>
+      </div>
     </>
   );
 }
