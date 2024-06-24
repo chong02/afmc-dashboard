@@ -43,7 +43,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          working-directory: dashboard
+          cache-dependency-path: dashboard/package-lock.json
 
       - name: Install dependencies
         run: npm ci
