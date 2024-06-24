@@ -38,8 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
-          recursive: true
+          submodules: 'true'
 
       - name: Set up Node
         uses: actions/setup-node@v4
