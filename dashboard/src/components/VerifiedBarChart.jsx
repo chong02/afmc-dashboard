@@ -9,9 +9,9 @@ function VerifiedBarChart() {
   useEffect(() => {
     const base = new Airtable({
       apiKey: import.meta.env.VITE_AIRTABLE_APPS_ACCESS_TOKEN
-    }).base("appz3tZF6U19hS8ii");
+    }).base(import.meta.env.VITE_AIRTABLE_BASE_ID);
 
-    base("Counts")
+    base(import.meta.env.VITE_AIRTABLE_TABLE_VERIFIED)
       .select({
         // Grab the first record in Grid view:
         maxRecords: 1,
