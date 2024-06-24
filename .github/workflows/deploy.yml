@@ -47,15 +47,19 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
+        working-directory: 'dashboard'
 
       - name: Build
         run: npm run build
+        working-directory: 'dashboard'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        working-directory: 'dashboard'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        working-directory: 'dashboard'
         with:
           # Upload dist folder
           path: './dist'
@@ -63,3 +67,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        working-directory: 'dashboard'
