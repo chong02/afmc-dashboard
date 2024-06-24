@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: 'dashboard'
+          submodules: true
 
       - name: Set up Node
         uses: actions/setup-node@v4
