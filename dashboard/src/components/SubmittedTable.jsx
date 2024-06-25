@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Airtable from "airtable";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import "./css/SubmittedTable.css";
 
 function roundOff(num) {
   const factor = Math.pow(10, 1);
   return Math.round(num * factor) / factor;
+}
+
+function createData(type, count, percent) {
+  return { type, count, percent };
 }
 
 function SubmittedTable() {
@@ -56,9 +68,52 @@ function SubmittedTable() {
   const otherPercent = (otherCount / total) * 100;
   const totalPercent = (total / total) * 100;
 
+  const rows = [
+    createData("Medi-Cal", mediCalCount, roundOff(mediCalPercent)),
+    createData(
+      "Covered California",
+      coveredCaCount,
+      roundOff(coveredCaPercent)
+    ),
+    createData("HealthPAC", healthPacCount, roundOff(healthPacPercent)),
+    createData("Other", otherCount, roundOff(otherPercent)),
+    createData("Total", total, roundOff(totalPercent))
+  ];
+
   return (
     <>
-      <div className="table">
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">
+                <b>Application Type</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>Count</b>
+              </TableCell>
+              <TableCell align="center">
+                <b>Percent of Total</b>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.type}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row" align="center">
+                  {row.type}
+                </TableCell>
+                <TableCell align="center">{row.count}</TableCell>
+                <TableCell align="center">{row.percent}%</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      {/* <div className="table">
         <div className="column" id="applicationType">
           <p>
             <b>Application Type</b>
@@ -97,7 +152,7 @@ function SubmittedTable() {
             <em>{roundOff(totalPercent)}</em>%
           </p>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
