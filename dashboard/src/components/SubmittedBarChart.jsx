@@ -65,7 +65,7 @@ function SubmittedBarChart() {
                 }
               ]}
               series={[{ data: counts }]}
-              width={800}
+              width={600}
               height={300}
             />
           </div>

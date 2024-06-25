@@ -1,19 +1,30 @@
 .chartTitle {
   font-family: Roboto, sans-serif;
+  text-align: center; /* Center the text within the .chartTitle div */
 }
 
 .yAxisLabel {
   font-family: Roboto, sans-serif;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  margin: -10;
+  margin: 0 10px; /* Add horizontal margin to space out the label from the chart */
 }
 
 .barChart {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  width: 50%;
 }
 
 .barChart > span {
+  margin-top: -15px;
   display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally within the chart */
 }
