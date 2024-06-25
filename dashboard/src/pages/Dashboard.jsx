@@ -1,12 +1,14 @@
 import React from "react";
 import SubmittedBarChart from "../components/SubmittedBarChart";
+import SubmittedTable from "../components/SubmittedTable";
 import VerifiedBarChart from "../components/VerifiedBarChart";
 
 function Dashboard() {
   return (
     <div>
-      <SubmittedBarChart />
-      <VerifiedBarChart />
+      <SubmittedTable />
+      {/* <SubmittedBarChart />
+      <VerifiedBarChart /> */}
     </div>
   );
 }
