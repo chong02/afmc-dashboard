@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div>
       <SubmittedBarChart />
-      {/* <VerifiedBarChart /> */}
+      <VerifiedBarChart />
     </div>
   );
 }
