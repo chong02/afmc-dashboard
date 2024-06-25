@@ -6,3 +6,6 @@
 
 # node modules
 dashboard/node_modules
+
+# vite files?
+dashboard/.vite
