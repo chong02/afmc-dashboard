@@ -7,7 +7,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import "./css/SubmittedTable.css";
 
 function roundOff(num) {
   const factor = Math.pow(10, 1);
@@ -82,8 +81,8 @@ function SubmittedTable() {
 
   return (
     <>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <TableContainer component={Paper} sx={{ width: 600 }}>
+        <Table aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="center">
@@ -113,46 +112,6 @@ function SubmittedTable() {
           </TableBody>
         </Table>
       </TableContainer>
-      {/* <div className="table">
-        <div className="column" id="applicationType">
-          <p>
-            <b>Application Type</b>
-          </p>
-          <p>Medi-Cal</p>
-          <p>Covered California</p>
-          <p>HealthPAC</p>
-          <p>Other</p>
-          <p>
-            <em>Total</em>
-          </p>
-        </div>
-
-        <div className="column" id="count">
-          <p>
-            <b>Count</b>
-          </p>
-          <p>{mediCalCount}</p>
-          <p>{coveredCaCount}</p>
-          <p>{healthPacCount}</p>
-          <p>{otherCount}</p>
-          <p>
-            <em>{total}</em>
-          </p>
-        </div>
-
-        <div className="column" id="percent">
-          <p>
-            <b>Percent of Total</b>
-          </p>
-          <p>{roundOff(mediCalPercent)}%</p>
-          <p>{roundOff(coveredCaPercent)}%</p>
-          <p>{roundOff(healthPacPercent)}%</p>
-          <p>{roundOff(otherPercent)}%</p>
-          <p>
-            <em>{roundOff(totalPercent)}</em>%
-          </p>
-        </div>
-      </div> */}
     </>
   );
 }

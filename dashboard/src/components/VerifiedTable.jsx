@@ -7,7 +7,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import "./css/VerifiedTable.css";
 
 function roundOff(num) {
   const factor = Math.pow(10, 1);
@@ -82,8 +81,8 @@ function VerifiedTable() {
 
   return (
     <>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <TableContainer sx={{ width: 600 }} component={Paper}>
+        <Table aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="center">
