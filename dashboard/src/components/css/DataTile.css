@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-color: rgb(163, 161, 161);
+  border-radius: 5px;
+  border-width: 2px;
+  width: 10%;
+}
+
+.metric-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.metric-value {
+  margin: 0;
+}
