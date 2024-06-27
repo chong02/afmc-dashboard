@@ -3,6 +3,7 @@ import SubmittedBarChart from "../components/SubmittedBarChart";
 import SubmittedTable from "../components/SubmittedTable";
 import VerifiedBarChart from "../components/VerifiedBarChart";
 import VerifiedTable from "../components/VerifiedTable";
+import { Link } from "react-router-dom";
 import "./css/Dashboard.css";
 
 function Dashboard() {
@@ -16,6 +17,9 @@ function Dashboard() {
             Certified Enrollment counselors (CECs) on behalf of patients and
             actual enrollments May 2023 - Present. <br></br> Last updated:
           </em>
+          <br></br>
+          For clear definitions see the{" "}
+          <Link to="/afmc-dashboard/data-dictionary">Data Dictionary</Link>.
         </p>
       </div>
 
